@@ -18,7 +18,7 @@ def main():
     member_repo = MemberRepository(db)
 
     # Initialize services
-    member_service = MemberService(member_repo)
+    member_service = MemberService(config, member_repo)
 
     # Initialize Telegram bot and worker
     telegram_bot = TelegramBotHandler(config, member_service)
