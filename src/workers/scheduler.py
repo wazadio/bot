@@ -15,7 +15,8 @@ class Scheduler:
     def setup_schedule(self):
         """Setup the daily schedule for kicking non-members"""
         # Schedule the task to run every day at 9:00 AM
-        schedule.every().day.at(os.getenv("TELEGRAM_CLEANING_SCHEDULE", "00:01")).do(self._run_kick_task)
+        kick_time = os.getenv("TELEGRAM_CLEANING_SCHEDULE", "00:01")
+        schedule.every().day.at(kick_time).do(self._run_kick_task)
         
         # You can also add other schedules:
         # schedule.every().hour.do(self._run_kick_task)  # Run every hour

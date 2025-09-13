@@ -1,11 +1,11 @@
 version: '3.8'
 
 services:
-  telegram-bot:
+  bot:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: kk_telegram_bot
+    container_name: kk_bot
     restart: unless-stopped
     volumes:
       # Mount logs directory for persistent logging
